@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FutbolTeamUp</string>
+    <string name="login_button_text">Iniciar Sesión</string>
+    <string name="register_button_text">Registrarse</string>
+    <string name="forgot_password_text">¿Olvidó su contraseña?</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="nombre_hint">Nombre</string>
+    <string name="apellido_hint">Apellido</string>
+    <string name="correo_hint">Correo electrónico</string>
+    <string name="telefono_hint">Teléfono</string>
+    <string name="posicion_hint">Posición</string>
+    <string name="registrar_button_text">Registrar</string>
+    <string name="user_icon">Icono de usuario</string>
+    <string name="manage_matches">Gestionar Partidos</string>
+    <string name="chat">Chat</string>
+    <string name="create_match">Crear Partido</string>
+    <string name="search_match">Buscar Partido</string>
+    <string name="exit">Salir</string>
+
+
+
+</resources>

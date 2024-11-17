@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417644563217",
+    "project_id": "futbolteamup",
+    "storage_bucket": "futbolteamup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417644563217:android:803ca9a90ceda025395ab0",
+        "android_client_info": {
+          "package_name": "com.example.futbolteamup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5pORuJ_J_W39shUe9i5vR6d0NnKw2Cf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
