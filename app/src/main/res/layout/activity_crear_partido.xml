@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/estadio"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Ícono de creación de partidos -->
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/football_logo"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creación de partidos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Campo de Ubicación -->
+        <EditText
+            android:id="@+id/etUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ubicación"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Campo de Tipo de Grama -->
+        <EditText
+            android:id="@+id/etTipoGrama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de grama"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Campo de Cantidad de Jugadores -->
+        <EditText
+            android:id="@+id/etJugadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad de jugadores requeridos"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Campo de Hora -->
+        <EditText
+            android:id="@+id/etHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora (HH:MM)"
+            android:inputType="time"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Campo de Especificaciones Adicionales -->
+        <EditText
+            android:id="@+id/etEspecificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Especificaciones adicionales"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black" />
+
+        <!-- Botón para Guardar Partido -->
+        <Button
+            android:id="@+id/btnGuardarPartido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Partido"
+            android:backgroundTint="@color/secondaryColor"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>
