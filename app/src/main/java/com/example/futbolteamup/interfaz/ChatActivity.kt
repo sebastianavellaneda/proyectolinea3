@@ -2,10 +2,10 @@ package com.example.futbolteamup.interfaz
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
+import android.widget.EditText
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.futbolteamup.R
 import com.google.firebase.database.*
@@ -16,8 +16,11 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var messageInput: EditText
     private lateinit var sendButton: Button
     private lateinit var messagesList: ListView
-    private lateinit var messagesAdapter: ArrayAdapter<String>
+    private lateinit var messagesAdapter: MessagesAdapter  // Usar el adaptador personalizado
     private val messages = ArrayList<String>()
+
+    private var chatType = "general"  // Tipo de chat: "general" o "partido"
+    private var partidoId: String? = null  // ID del partido seleccionado
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +32,14 @@ class ChatActivity : AppCompatActivity() {
         sendButton = findViewById(R.id.sendButton)
         messagesList = findViewById(R.id.messagesList)
 
-        // Configurar el adaptador para la lista
-        messagesAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, messages)
+        // Usar el adaptador personalizado MessagesAdapter
+        messagesAdapter = MessagesAdapter(this, messages)
         messagesList.adapter = messagesAdapter
 
+        // Cargar los mensajes del chat general
+        loadMessages()
+
+        // Enviar un mensaje
         sendButton.setOnClickListener {
             val message = messageInput.text.toString()
             if (message.isNotEmpty()) {
@@ -42,15 +49,17 @@ class ChatActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, escribe un mensaje", Toast.LENGTH_SHORT).show()
             }
         }
+    }
 
-        // Leer mensajes en tiempo real
-        val messagesRef = database.getReference("messages")
+    private fun loadMessages() {
+        val messagesRef: DatabaseReference = database.getReference("messages/general")
+
         messagesRef.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val message = snapshot.getValue(String::class.java)
                 if (message != null) {
                     messages.add(message)
-                    messagesAdapter.notifyDataSetChanged()
+                    messagesAdapter.notifyDataSetChanged()  // Notificar al adaptador que hay nuevos mensajes
                 }
             }
 
@@ -64,14 +73,23 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-        val messagesRef = database.getReference("messages")
+        val messagesRef: DatabaseReference = database.getReference("messages/general")
+
         val messageId = messagesRef.push().key
         if (messageId != null) {
-            messagesRef.child(messageId).setValue(message).addOnSuccessListener {
-                Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener { error ->
-                Toast.makeText(this, "Error al enviar mensaje: ${error.message}", Toast.LENGTH_SHORT).show()
-            }
+            val messageData = mapOf(
+                "message" to message,
+                "sender" to "usuario1",  // Nombre o ID del usuario autenticado
+                "timestamp" to System.currentTimeMillis().toString()
+            )
+
+            messagesRef.child(messageId).setValue(messageData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { error ->
+                    Toast.makeText(this, "Error al enviar mensaje: ${error.message}", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 }

@@ -6,39 +6,29 @@
     android:background="@drawable/estadio"
     android:padding="16dp">
 
-    <!-- Título o encabezado -->
+    <!-- Título -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chat General"
+        android:text="Gestión de Partidos"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
         android:padding="8dp"
         android:layout_marginBottom="16dp" />
 
-    <!-- Lista de mensajes (chat general o chat de partido) -->
-    <ListView
-        android:id="@+id/messagesList"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/gradient_bg"
-    android:divider="@android:color/darker_gray"
-    android:dividerHeight="0.5dp" />
-
-    <!-- Opción para seleccionar un partido -->
+    <!-- Mensaje si no hay partidos creados -->
     <TextView
-        android:id="@+id/selectPartidoText"
+        android:id="@+id/noPartidosText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Selecciona un partido para cambiar el chat"
-        android:textSize="16sp"
+        android:text="No has creado ningún partido aún. Crea uno para poder gestionarlo."
         android:gravity="center"
         android:visibility="gone"
-    android:layout_marginTop="8dp" />
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
 
-    <!-- Lista de partidos disponibles -->
+    <!-- Lista de partidos creados por el administrador -->
     <ListView
         android:id="@+id/partidosListView"
         android:layout_width="match_parent"
@@ -49,20 +39,12 @@
         android:visibility="gone"
     android:layout_marginBottom="16dp" />
 
-    <!-- Campo para ingresar mensajes -->
-    <EditText
-        android:id="@+id/messageInput"
+    <!-- Botón para crear un nuevo partido -->
+    <Button
+        android:id="@+id/crearPartidoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/edit_text"
-        android:hint="Escribe un mensaje..."
+        android:text="Crear Partido"
         android:layout_marginBottom="16dp" />
 
-    <!-- Botón para enviar el mensaje -->
-    <Button
-        android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:layout_gravity="end" />
 </LinearLayout>

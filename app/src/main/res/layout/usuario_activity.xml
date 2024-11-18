@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/screen"
+    android:padding="16dp">
+
+    <!-- Imagen del perfil del usuario -->
+    <ImageView
+        android:id="@+id/user_profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icuser"
+        android:contentDescription="Profile Picture"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop" />
+
+    <!-- Nombre de usuario (Texto en rojo) -->
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre usuario"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Campo para el nombre completo (solo lectura inicialmente) -->
+    <EditText
+        android:id="@+id/full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre completo"
+        android:enabled="false"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="8dp" />
+
+    <!-- Campo para el número de teléfono (solo lectura inicialmente) -->
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono"
+        android:enabled="false"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="8dp" />
+
+    <!-- Campo para la posición del usuario (solo lectura inicialmente) -->
+    <EditText
+        android:id="@+id/position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Posición"
+        android:enabled="false"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón para abrir el historial de partidos -->
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:layout_marginTop="8dp" />
+
+    <!-- Ícono de lápiz para activar la edición -->
+    <ImageView
+        android:id="@+id/edit_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/icmodificar"
+        android:contentDescription="Edit Icon"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center" />
+</LinearLayout>
