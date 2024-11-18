@@ -1,13 +1,14 @@
 package com.example.futbolteamup.interfaz
 
 
-import CrearPartidoActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.futbolteamup.R
+import com.example.futbolteamup.interfaz.CrearPartidoActivity
+
 import com.google.ai.client.generativeai.type.content
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
