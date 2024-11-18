@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/estadio"
+    android:padding="16dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestionar Partido"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Ubicación -->
+    <EditText
+        android:id="@+id/ubicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Tipo de Grama -->
+    <EditText
+        android:id="@+id/tipoGrama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo de Grama"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Cantidad de Jugadores -->
+    <EditText
+        android:id="@+id/cantidadJugadores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad de Jugadores Requeridos"
+        android:inputType="number"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Hora -->
+    <EditText
+        android:id="@+id/hora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Especificaciones -->
+    <EditText
+        android:id="@+id/especificaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Especificaciones"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón de Guardar Cambios -->
+    <Button
+        android:id="@+id/guardarCambiosButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Cambios"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>

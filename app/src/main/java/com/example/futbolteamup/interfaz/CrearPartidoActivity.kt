@@ -39,8 +39,8 @@ class CrearPartidoActivity : AppCompatActivity() {
             val especificaciones = etEspecificaciones.text.toString().trim()
 
             // Validación
-            if (ubicacion.isEmpty() || tipoGrama.isEmpty() || jugadores == null || hora.isEmpty()) {
-                Toast.makeText(this, "Por favor llena todos los campos obligatorios", Toast.LENGTH_SHORT).show()
+            if (ubicacion.isEmpty() || tipoGrama.isEmpty() || jugadores == null || jugadores <= 0 || jugadores > 24 || hora.isEmpty()) {
+                Toast.makeText(this, "Por favor llena todos los campos obligatorios correctamente. El número de jugadores debe ser entre 1 y 24.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -51,13 +51,13 @@ class CrearPartidoActivity : AppCompatActivity() {
                 "jugadores" to jugadores,
                 "hora" to hora,
                 "especificaciones" to especificaciones,
-                "creador" to auth.currentUser?.uid
+                "creador" to auth.currentUser?.uid  // Guardar el UID del creador
             )
 
             db.collection("partidos").add(partido)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Partido creado exitosamente", Toast.LENGTH_SHORT).show()
-                    finish()
+                    finish()  // Regresar a la pantalla anterior
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Error al guardar el partido: ${e.message}", Toast.LENGTH_SHORT).show()
